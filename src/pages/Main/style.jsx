@@ -1,55 +1,85 @@
-import styled, {keyframes} from "styled-components";
-import defaultTheme from "../../style/Theme";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import background from '../../assets/images/background.jpg'
 
 export const Container = styled.div`
   width: 100%;
-  min-height: 100vh;
-  background-color: ${defaultTheme.colors.background};
+  height: 100vh;
+  background-image: url(${background});
+  background-position: center;
+  background-color: transparent;
+  outline: none;
+  opacity: 1;
+  background-size: cover;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 `;
 
-export const Animation = keyframes`
-  0% {
-    transform: translate(0px, 0px);
-  }
-  50% {
-    transform: translate(16px, -16px);
-  }
-  100% {
-    transform: translate(0px, 0px);
-  }
+export const Consult = styled.section`
+  width: 20%;
+  min-width: 300px;
+  height: 48%;
+  min-height: 288px;
+  background-color: #191b1f20;
+  backdrop-filter: blur(5px);
+  border: 2px solid #191b1f40;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 `;
 
-export const Logo = styled.img`
-  height: 40vmin;
-  margin: 0;
-  animation: ${Animation} infinite 2s linear;
-`;
-
-export const Title = styled.h1 `
-  margin: 0;
-  font-size: ${defaultTheme.fontSize.base2x1};
-  color: ${defaultTheme.colors.text};
+export const Title = styled.h1`
+  color: #F3F3F3;
+  width: 90%;
   text-align: center;
-
-  & span{
-    color: ${defaultTheme.colors.primary};
-  }
-`;
-
-export const Subtitle = styled.h2 `
-  font-size: ${defaultTheme.fontSize.base};
-  margin-top: 4px;
-  color: ${defaultTheme.colors.gray600};
-  font-weight: 400;
-`;
-
-export const Link = styled.a `
-  color: ${defaultTheme.colors.primary};
-  font-size: ${defaultTheme.fontSize.xl};
+  font-size: 24px;
   font-weight: 600;
-  margin-top: 16px;
+  margin: 0;
+  border-bottom: 1px solid #f3f3f329;
+  padding-bottom: 8px;
+`;
+
+export const Form = styled.form`
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const Search = styled.input`
+  width: 100%;
+  height: 32px;
+  border-radius: 8px;
+  background-color: #F3F3F3;
+  border: none;
+  outline: none;
+  margin-bottom: 8px;
+`;
+
+export const Submit = styled(Link)`
+  width: 100%;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background:linear-gradient(to right, #162f2b, #173940);
+  color: #F3F3F3;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .5s;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  &:hover{
+    transform: scale(103%);
+  }
+
 `;

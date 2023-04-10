@@ -1,24 +1,26 @@
-import React from "react";
-import { Container, Logo, Title, Subtitle, Link} from "./style";
-import logo from "../../assets/images/logo.png";
+import React, { useState } from "react";
+import { Container, Consult, Title, Form, Search, Submit } from "./style";
 
 function Main(){
+
+  const [city, setCity] = useState()
+
+
   return (
-
     <Container>
-      <Logo src={logo} alt="logo" />
-      <Title>Olá Mundo, esse é o Template da RocketStack<span>.</span></Title>
-      <Subtitle>FEITO POR CARLOS RODRIGUES</Subtitle>
-      <Link
-        href="https://carlosdanieldev.netlify.app/"
-        target="_blank"
-        className="portfolio-link"
-        rel="noreferrer"
-      >
-        &copy; PORTIFÓLIO
-      </Link>
+      <Consult>
+        <Title>Consultar Clima</Title>
+        <Form>
+          <Search
+            type="text"
+            placeholder="Digite uma cidade"
+            city={city}
+            onChange={(event) => setCity(event.target.value.replace(' ', '%20'))}
+          />
+          <Submit to={`/${city}/weather`}>Enviar</Submit>
+        </Form>
+      </Consult>
     </Container>
-
   );
 };
 

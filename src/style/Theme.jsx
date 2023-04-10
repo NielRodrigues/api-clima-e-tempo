@@ -19,7 +19,7 @@ const defaultTheme = {
     purple: "#ae32F5",
     pink: "#FE58A5",
     gray100: "#FAF9F6",
-    gray200: "#E9ECEf",
+    gray200: "#E9ECEF",
     gray300: "#DBDDDF",
     gray400: "#C2C3C3",
     gray500: "#ABB0b6",
